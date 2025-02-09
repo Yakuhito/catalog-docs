@@ -1,3 +1,8 @@
 # Table of contents
 
-* [Page](README.md)
+* [FAQ](README.md)
+
+## Technical Manual
+
+* [Slots](technical-manual/slots.md)
+* [Action Layer](technical-manual/action-layer.md)
