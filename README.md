@@ -1,3 +1,2 @@
-# FAQ
+# Page
 
-Lorem ipsum
