@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Page](README.md)
+* [CATalog FAQ](README.md)
 
 ## Technical Manual
 
