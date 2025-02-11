@@ -18,4 +18,4 @@ It's vital to note that any dApp must also carefully consider refunds. Schemes u
 
 **Warning 2**: Commitment coins are only effective if implemented correctly. For example, only committing a TAIL by itself is not useful at all - a farmer can use the same commitment coin to register the CAT to their address. CATalog commitments also contain the user's NFT receive address, as well as other data.
 
-_Written by yakuhito from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
+_Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._

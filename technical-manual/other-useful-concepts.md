@@ -14,32 +14,21 @@ A dApp developer's worst nightmare is almost certain to include a malicious farm
 
 ### CAT Makers
 
-Managing CAT reserves is more difficult than it might initially seem. A CAT's outer and inner layer are known to a singleton (the inner puzzle is usually a 'pay to delegated puzzle by singleton puzzle') - however, the intermediary layers are not. A DAO CAT might have an intermediary layer that manages active votes, while revocable CATs have a revocation layer sitting between the outer and inner puzzles. A dApp might want to allow the flexibility of being able to 'own' or interact with CATs whose intermediary layers haven't yet been written. CATalog and XCHandles, for example, want this flexibility in the CAT used for registration payments. To have it, they allow governance (the price singleton) to set the current CAT maker instead of CAT tail hash. The default CAT maker can be defined as follows:
+Managing CAT reserves is more difficult than it might initially seem. A CAT's outer and inner layer are known to a singleton (the inner puzzle is usually a 'pay to delegated puzzle by singleton puzzle') - however, the intermediary layers are not. A DAO CAT might have an intermediary layer that manages active votes, while revocable CATs have a revocation layer sitting between the outer and inner puzzles. A dApp might want to allow the flexibility of being able to 'own' or interact with CATs whose intermediary layers haven't yet been written. CATalog and XCHandles, for example, want this flexibility in the CAT used for registration payments. To have it, they allow governance (the price singleton) to set the current CAT maker instead of CAT tail hash.
 
-```
-(mod (
-    CAT_MOD_HASH
-    TAIL_HASH_HASH ; (sha256 1 TAIL_HASH)
-    Inner_Puzzle_Hash
-    user_solution ; unused
-)
-    (include curry.clib)
-
-    (curry_hashes_inline CAT_MOD_HASH
-        (sha256 1 CAT_MOD_HASH)
-        TAIL_HASH_HASH
-        Inner_Puzzle_Hash
-    )
-)
-```
+_Note_: The default CAT maker can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/default_puzzles/default_cat_maker.clsp).
 
 The puzzle accepts the tail hash hash (double-hashing is simply employed for efficiency), the desired inner puzzle hash of a coin, and a user solution. It returns the full puzzle hash of a CAT coin with those parameters. While the user-provided solution is not used, one can imagine a case where the user could supply intermediary layer state such as active votes for a DAO CAT. Note that the maker does not return any output conditions.
 
 To summarize, CAT makers are short, simple to write 'adapters' that produce the full puzzle hash for a CAT coin given outer layer parameters (e.g., TAIL hash) and the inner ('custody') puzzle. They're employed to support CATs with different intermediary layer structures.&#x20;
 
-### Delegated State Updates
+### The Delegated State Action
 
-TODO
+The registration fees for CATalog and XCHandles are paid in CAT tokens (initially, these represent warped stablecoins). One design decision was to allow another singleton (sometimes referred to as the 'price singleton') to control pricing parameters and puzzles. For CATalog, this means that the pricing singleton may change the CAT the registration fees are paid in, as well as the amount. XCHandles also allows the pricing singleton to change both pricing puzzles (the one that controls the 'base' price of a handle and the one that handles expiry auctions).
+
+Since both registries' states consist fully of pricing parameters, a 'delegated state' action was added to both. The action updates the current singleton's state to one sent by the price singleton via a message with mode 18 (puzzle-puzzle). While the action has limited potential to be useful to other dApps, it enables the pricing parameter freedom that both XCHandles and CATalog require.
+
+_Note_: The delegated state action code can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/shared/delegated_state.clsp).
 
 ### Launching
 
@@ -51,5 +40,5 @@ TODO
 
 
 
-_Written by yakuhito from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
+_Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
 

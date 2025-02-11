@@ -20,4 +20,4 @@ The slot puzzle verifies the coin's parent is a singleton with the same launcher
 
 **Warning 2**: Slots assume the controller singleton always has an amount of 1.
 
-_Written by yakuhito from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
+_Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
