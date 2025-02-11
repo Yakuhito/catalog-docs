@@ -17,3 +17,5 @@ It's vital to note that any dApp must also carefully consider refunds. Schemes u
 **Warning**: Refund logic must be carefully registered. If any commitment can be refunded, for example, a malicious farmer may change a registration action to a refund one. They may then create a commitment for the same TAIL hash. The rightful owner of the CAT would not be able to register their CAT as they would have to start the registration process all over again - which they only realize after the malicious farmer's commitment coin has at least 1 confirmation (i.e., it was already included in at least the most recently farmed block).
 
 **Warning 2**: Commitment coins are only effective if implemented correctly. For example, only committing a TAIL by itself is not useful at all - a farmer can use the same commitment coin to register the CAT to their address. CATalog commitments also contain the user's NFT receive address, as well as other data.
+
+_Written by yakuhito from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._

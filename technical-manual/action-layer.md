@@ -27,3 +27,5 @@ Custom finalizers can be used to significantly reduce cost and complexity of som
 **Warning**: Most finalizers, including the default and reserve ones, will assume the singleton's amount to be 1.
 
 **Warning 2**: The reserve finalizer treats the first amount in the state as the reserve amount.
+
+_Written by yakuhito from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._

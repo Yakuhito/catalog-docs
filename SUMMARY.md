@@ -7,5 +7,5 @@
 * [Slots](technical-manual/slots.md)
 * [Action Layer](technical-manual/action-layer.md)
 * [Commitments](technical-manual/commitments.md)
-* [Action: Delegated State Update](technical-manual/action-delegated-state-update.md)
+* [Other Useful Concepts](technical-manual/other-useful-concepts.md)
 * [CATalog](technical-manual/catalog.md)

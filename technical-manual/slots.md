@@ -19,3 +19,5 @@ The slot puzzle verifies the coin's parent is a singleton with the same launcher
 **Warning**: Slots do not ensure uniquenes by themselves. Users can always 'omit' a given slot to trick a naive dApp that the slot doesn't exist. For example, a naive handle registration app might be tricked into registering the same handle twice. If dApps need to ensure slots are not skipped, they should index them or build more advanced data structures such as cross-slot doubly-linked sorted lists. More information about the technique can be found in [this blog post](https://blog.fireacademy.io/p/solving-the-problem-of-uniqueness).
 
 **Warning 2**: Slots assume the controller singleton always has an amount of 1.
+
+_Written by yakuhito from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
