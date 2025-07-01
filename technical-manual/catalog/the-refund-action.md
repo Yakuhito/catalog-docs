@@ -14,6 +14,6 @@ During the period between the two actions,  it is possible that the precommitmen
 * The precommitment amount is wrong (e.g., the price singleton changed price of a registration from 20 wUSDC.b to 10 wUSDC.b)
 * The TAIL hash has been registered
 
-The action also creates a puzzle announcement. This announcement can be asserted to ensure the dApp singleton is running the right action with the right parameters. For the refund action, the announcement prefix, `'`$`'` , is concatenated to `(sha256tree (tail_hash . initial_nft_owner_ph))`.
+The action also creates a puzzle announcement. This announcement can be asserted to ensure the dApp singleton is running the right action with the right parameters. For the refund action, the announcement prefix, `'$'` , is concatenated to `(sha256tree (tail_hash . initial_nft_owner_ph))`.
 
 _Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 14th, 2025._
