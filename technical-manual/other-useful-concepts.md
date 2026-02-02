@@ -16,9 +16,9 @@ A dApp developer's worst nightmare is almost certain to include a malicious farm
 
 Managing CAT reserves is more difficult than it might initially seem. A CAT's outer and inner layer are known to a singleton (the inner puzzle is usually a 'pay to delegated puzzle by singleton puzzle') - however, the intermediary layers are not. A DAO CAT might have an intermediary layer that manages active votes, while revocable CATs have a revocation layer sitting between the outer and inner puzzles. A dApp might want to allow the flexibility of being able to 'own' or interact with CATs whose intermediary layers haven't yet been written. CATalog and XCHandles, for example, want this flexibility in the CAT used for registration payments. To have it, they allow governance (the price singleton) to set the current CAT maker instead of CAT tail hash.
 
-_Note_: The default CAT maker can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/default_puzzles/default_cat_maker.clsp).
+_Note_: The default CAT maker can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/default_puzzles/default_cat_maker.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/default_puzzles/default_cat_maker.clsp)). The revocable CAT maker can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/default_puzzles/revocable_cat_maker.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/default_puzzles/revocable_cat_maker.clsp)).
 
-The puzzle accepts the tail hash hash (double-hashing is simply employed for efficiency), the desired inner puzzle hash of a coin, and a user solution. It returns the full puzzle hash of a CAT coin with those parameters. While the user-provided solution is not used, one can imagine a case where the user could supply intermediary layer state such as active votes for a DAO CAT. Note that the maker does not return any output conditions.
+The puzzle curries in the tail hash hash (double-hashing is simply employed for efficiency) and accepts the desired inner puzzle hash of a coin, as well as a user solution. It returns the full puzzle hash of a CAT coin with those parameters. While the user-provided solution is not used, one can imagine a case where the user could supply intermediary layer state such as active votes for a DAO CAT. Note that the maker does not return any output conditions.
 
 To summarize, CAT makers are short, simple to write 'adapters' that produce the full puzzle hash for a CAT coin given outer layer parameters (e.g., TAIL hash) and the inner ('custody') puzzle. They're employed to support CATs with different intermediary layer structures.&#x20;
 
@@ -28,7 +28,7 @@ The registration fees for CATalog and XCHandles are paid in CAT tokens (initiall
 
 Since both registries' states consist fully of pricing parameters, a 'delegated state' action was added to both. The action updates the current singleton's state to one sent by the price singleton via a message with mode 18 (puzzle-puzzle). While the action has limited potential to be useful to other dApps, it enables the pricing parameter freedom that both XCHandles and CATalog require.
 
-_Note_: The delegated state action code can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/shared/delegated_state.clsp).
+_Note_: The delegated state action code can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/actions/shared/delegated_state.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/shared/delegated_state.clsp)).
 
 ### Launching
 

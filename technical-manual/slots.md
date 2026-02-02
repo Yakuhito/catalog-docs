@@ -4,13 +4,13 @@ description: Long-term memory for singletons
 
 # Slots
 
-_Note_: The slot puzzle is available [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/singleton/slot.clsp).
+_Note_: The slot puzzle is available [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/singleton/slot.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/singleton/slot.clsp)).
 
 A slot is a coin intended to store values that may be read at a later time/spend by the singleton that created it. In a way, slots allow singletons to have 'long-term' memory. Another way to think about slots is 'one-time tickets only redeemable by the issuing singleton.'
 
 To read the values, the singleton will spend the slot coin by sending an empty message with mode 18 (puzzle-puzzle).
 
-Slots are curried twice: the first time, `SINGLETON_STRUCT` and `NONCE` are curried in. Nonce is used to distinguish different slots when needed - for example, a 'user rewards' slot might have a different nonce than a 'round reward info' slot, even though they both have the same structure in their values (e.g., 3 numbers). Controller singletons will usually store the 1st curry hash (e.g., `SLOT_1ST_CURRY_HASH` in CATalog's register action), as the value is static and unique for every singleton controller launcher id and nonce.
+Slots are curried twice: the first time, `SINGLETON_STRUCT` and `NONCE` are curried in. Nonce is used to distinguish different slots when needed - for example, a 'user rewards' slot might have a different nonce than a 'round reward info' slot, even though they both have the same structure in their values (e.g., 3 numbers). This deters attacks where a slot of one type may be confused by a slot of another type with the same data structure, as the 1st curry depends on the slot type (nonce). Controller singletons will usually store the 1st curry hash (e.g., `SLOT_1ST_CURRY_HASH` in CATalog's register action), as the value is static and unique for every singleton controller launcher id and nonce.
 
 The second curry adds `VALUE_HASH` to the puzzle. This is the hash of the value the controller singleton wants to consume. Slots only store hashes since this means the whole value doesn't have to be revealed in the slot's puzzle reveal, potentially saving a significant number of bytes for each slot spend. As a general rule of thumb, the full values of spent and created slots can usually be determined by looking at a singleton's solution - this is the case for CATalog, XCHandles, and the reward distributor.
 

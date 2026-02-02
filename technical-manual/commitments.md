@@ -4,7 +4,7 @@ description: Commit-reveals made easy
 
 # Commitments
 
-_Note_: The inner puzzle for commitment coins can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/singleton/precommit.clsp).
+_Note_: The inner puzzle for commitment coins can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/singleton/precommit.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/singleton/precommit.clsp)).
 
 Sometimes, dApps need to use a commit-reveal pattern. A good example is registering a CAT on CATalog: a user only needs a TAIL reveal to register their CAT. However, one cannot simply provide it to a dApp: a malicious farmer could see the transaction, extract the TAIL reveal, and register the CAT instead.
 
