@@ -4,7 +4,7 @@ description: The whole point of CATalog
 
 # The Register Action
 
-_Note_: The register action code be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/catalog/register.clsp).
+_Note_: The register action code be found [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/actions/catalog/register.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/catalog/register.clsp)).
 
 The register action, as the name suggest, registers a new CATalog entry. This requires a precommitment coin that contains the TAIL hash, the initial NFT owner puzzle hash, as well as refund-related information (CAT maker and CAT maker solution) to be created before.
 

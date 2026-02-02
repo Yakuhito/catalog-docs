@@ -4,7 +4,7 @@ description: Something went wrong - but worry not, you can get your funds back.
 
 # The Refund Action
 
-_Note_: The refund action code be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/catalog/refund.clsp).
+_Note_: The refund action code be found [here](https://github.com/Yakuhito/slot-machine/blob/master/rue-puzzles/actions/catalog/refund.rue) ([Chialisp](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/actions/catalog/refund.clsp)).
 
 Registering an entry in CATalog requires two transactions. First, a user must create a precommitment coin. Second, after waiting for 32 blocks, the user needs to interact with the registry, which checks (spends) their precommitment coin.
 

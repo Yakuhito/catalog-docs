@@ -6,7 +6,7 @@ The CATalog registry's state is `(cat_maker_puzzle_hash . registration_price)` ,
 
 The registry launches NFTs by first creating 'uniqueness prelauncher' coins, which then create launcher coins and the eve NFTs. Uniqueness prelaunchers contain the unique data's hash (i.e., the TAIL hash) in their puzzle, allowing other dApps and APIs to efficiently verify the authenticity of the NFTs.&#x20;
 
-_Note_: The default CAT maker can be found [here](https://github.com/Yakuhito/slot-machine/blob/master/puzzles/nft/uniqueness_prelauncher.clsp).
+Generally, announcements and messages from the main registry are sent using a one-byte prefix followed by a hash of the actual message contents. To prevent collisions, the prefixes and message structures are defined in a single file ([here](https://github.com/xch-dev/chia-wallet-sdk/blob/main/crates/chia-sdk-driver/src/primitives/action_layer/catalog_registry_prefix.rs)).
 
 _Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
 
