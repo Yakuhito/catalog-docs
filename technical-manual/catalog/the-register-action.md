@@ -18,4 +18,4 @@ When the action is run, it:
 
 The action also creates a puzzle announcement. This announcement can be asserted to ensure the dApp singleton is running the right action with the right parameters. For the register action, the announcement prefix, `'r'` , is concatenated to `(sha256tree (tail_hash . initial_nft_owner_ph))`.
 
-_Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 14th, 2025._
+_Written by_ [_yakuhito_](https://x.com/yakuhito) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 14th, 2025._

@@ -30,4 +30,4 @@ Custom finalizers can be used to significantly reduce cost and complexity of som
 
 **Warning 2**: The reserve finalizer treats the first amount in the state as the reserve amount.
 
-_Written by_ [_yakuhito_](https://x.com/yakuh1t0) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
+_Written by_ [_yakuhito_](https://x.com/yakuhito) _from_ [_FireAcademy.io_](https://fireacademy.io/) _on Feb 11th, 2025._
